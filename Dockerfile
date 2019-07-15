@@ -1,4 +1,4 @@
-ARG BINARY_NAME_DEFAULT=boilerplate
+ARG BINARY_NAME_DEFAULT={{crate_name}}
 
 FROM clux/muslrust:stable as builder
 ARG BINARY_NAME_DEFAULT
@@ -36,4 +36,4 @@ COPY --from=builder /build-out/migrations /migrations
 
 # Start with an execution list (there is no sh in a scratch image)
 # No shell => no variable expansion, |, <, >, etc
-CMD ["/boilerplate"]
+CMD ["/{{crate_name}}"]

@@ -17,10 +17,17 @@ This is a REST api boilerplate project made using some of the best available too
 
 ## Setup
 
-Install diesel-cli and cargo-watch
 
+
+Install cargo-generate, diesel-cli and cargo-watch
+
+    cargo install cargo-generate
     cargo install diesel_cli
     cargo install cargo-watch
+    
+Clone this repo using cargo-generate
+
+    cargo generate --git https://github.com/djotanov/rust-rest-template.git --name myproject
 
 Install postgres database and make sure that local user is admin and it should use "peer" or "trust" authentication methods (see `pg_hba.conf`)
 Than run the application
@@ -34,7 +41,7 @@ Alternatively, you can run the application with postgres running in docker
 
 Yet another way is to build docker image with the application and use docker compose to start application and postgres
 
-    docker build -t boilerplate .
+    docker build -t {{crate_name}} .
     docker-compose up
 
 ## Development
@@ -55,3 +62,5 @@ Now you can launch `watch.sh` script which will run the migrations and tests and
 or, if you are running postgres in docker:
 
     PROFILE=docker ./watch.sh
+    
+To rename the project, just replace all occurances of `boilerplate` in 

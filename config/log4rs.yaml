@@ -7,5 +7,5 @@ root:
   appenders:
     - stdout
 loggers:
-  boilerplate:
+  {{crate_name}}:
     level: debug

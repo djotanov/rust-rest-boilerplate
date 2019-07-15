@@ -1,5 +1,5 @@
 database:
-  url: postgres://localhost/actix_boilerplate
+  url: postgres://localhost/{{crate_name}}
   pool_max_size: 10
   pool_min_idle: 0
   pool_max_lifetime_seconds: 1800
