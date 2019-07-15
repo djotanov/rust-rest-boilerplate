@@ -47,3 +47,11 @@ To create a new endpoint (or group of endpoints):
 - Implement service (in `service` folder)
 - Create database migrations (in `migrations` folder)
 - Implement repository (in `repository` folder)
+
+Now you can launch `watch.sh` script which will run the migrations and tests and start the application on all code changes.
+
+    ./watch.sh
+    
+or, if you are running postgres in docker:
+
+    PROFILE=docker ./watch.sh

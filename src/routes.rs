@@ -16,6 +16,16 @@ pub fn routes(cfg: &mut web::ServiceConfig, database: PostgresConnectionPool) {
             .route("/{id}", web::get().to(get_user))
             .route("/{id}", web::delete().to(delete_user))
     )
+//        .service(
+//        // create separate .service per scope, and pass corresponding Service implementation in shared state
+//        web::scope("/entity2")
+//            .data(user_service)
+//            .route("", web::get().to(get_all_entity2))
+//            .route("", web::put().to(add_new_entity2))
+//            .route("", web::post().to(update_entity2))
+//            .route("/{id}", web::get().to(get_entity2))
+//            .route("/{id}", web::delete().to(delete_entity2)
+//    )
 
         .route("/", web::get().to(health));
 }

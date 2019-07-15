@@ -25,7 +25,7 @@ impl ApplicationConfig {
     pub fn new() -> Result<Self, ConfigError> {
         let mut parsed_config = Config::new();
         parsed_config.merge(File::with_name("config/application.yml"))?;
-        let profile = env::var("PROFILE").unwrap_or("dev".into());
+        let profile = env::var("PROFILE").unwrap_or_else(|_| "dev".into());
         parsed_config.merge(File::with_name(&format!("config/application-{}.yml", profile)).required(false))?;
         parsed_config.merge(File::with_name("config/application-local.yml").required(false))?;
         parsed_config.merge(Environment::with_prefix("app"))?;
@@ -54,7 +54,6 @@ mod tests {
         let conf = ApplicationConfig::new().unwrap();
 
         // Then
-        assert_eq!(conf.database.url, "postgres://localhost/actix_boilerplate");
         assert_eq!(conf.server.host, "0.0.0.0");
         assert_eq!(conf.server.port, 8001);
     }

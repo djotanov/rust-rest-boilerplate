@@ -28,10 +28,10 @@ fn error_body(error: ApiError) -> HttpResponse {
         Err(e) => e.description().to_string(),
     };
 
-    let mut buff = String::from(error.to_string());
+    let mut buff = error.to_string();
     if error.print_backtrace() {
-        buff += &format!("\n");
-        buff += &format!("{}", error.backtrace().unwrap().to_string());
+        buff += &"\n".to_string();
+        buff += &error.backtrace().unwrap().to_string();
     }
     error!("{}", buff);
     HttpResponse::build(StatusCode::INTERNAL_SERVER_ERROR)
