@@ -1,0 +1,30 @@
+[package]
+name = "boilerplate"
+version = "0.1.0"
+authors = ["Dragan Jotanovic <dragan.jotanovic@algomi.com>"]
+edition = "2018"
+
+[dependencies]
+log = "0.4"
+log4rs = "0.8"
+failure = "0.1"
+chrono ="0.4.7"
+actix-rt = "0.2"
+actix-web = "1.0"
+actix-http = "0.2"
+actix-service = "0.4.1"
+diesel = { version = "1.4", features = [ "postgres", "r2d2", "chrono", "serde_json"] }
+diesel_migrations = "1.4"
+r2d2 = "0.8"
+futures = "0.1"
+config = "0.9"
+serde = { version = "^1.0", features = ["derive"] }
+serde_derive = "1.0"
+serde_json = "1.0"
+validator = "0.9"
+validator_derive = "0.9"
+openssl = "*"
+
+[[bin]]
+name = "boilerplate"
+path = "src/bin/main.rs"

@@ -1,0 +1,3 @@
+# Override config from main application.yaml here
+database:
+  url: postgres://postgres:postgres@localhost:5431/postgres
