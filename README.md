@@ -43,6 +43,7 @@ To create a new endpoint (or group of endpoints):
 
 - Append new service to ServiceConfig in `routes.rs` and define handler bindings
 - Implement handler (in `handler` folder)
+- Implement domain model (in `model` folder)
 - Implement service (in `service` folder)
 - Create database migrations (in `migrations` folder)
 - Implement repository (in `repository` folder)
