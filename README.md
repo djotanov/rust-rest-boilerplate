@@ -39,6 +39,17 @@ Alternatively, build docker image with the application and use docker compose to
     docker build -t {{crate_name}} .
     docker-compose up
 
+Now you can send couple of REST requests (using httpie):
+
+    http PUT localhost:8001/users first_name=user1 last_name=Smith email=user1.smith@email.com
+    http PUT localhost:8001/users first_name=user2 last_name=Smith email=user2.smith@email.com
+    http GET localhost:8001/users
+    http GET localhost:8001/users/1
+    http POST localhost:8001/users id:=1 first_name=newUser1 last_name=Doe email=user1@doe.com
+    http GET localhost:8001/users/1
+    http DELETE localhost:8001/users/2
+    http GET localhost:8001/users/2
+    
 ## Development
 
 To create a new endpoint (or group of endpoints):
