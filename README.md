@@ -29,17 +29,12 @@ Clone this repo using cargo-generate
 
     cargo generate --git https://github.com/djotanov/rust-rest-boilerplate.git --name myproject
 
-Install postgres database and make sure that local user is admin and it should use "peer" or "trust" authentication methods (see `pg_hba.conf`)
-Than run the application
-
-    cargo run
-
-Alternatively, you can run the application with postgres running in docker
+Start postgres in docker, and run the application
 
     docker run -p 5431:5432 -e POSTGRES_PASSWORD='postgres' postgres:alpine
-    PROFILE=docker cargo run
+    cargo run
 
-Yet another way is to build docker image with the application and use docker compose to start application and postgres
+Alternatively, build docker image with the application and use docker compose to start application and postgres
 
     docker build -t {{crate_name}} .
     docker-compose up
@@ -58,9 +53,3 @@ To create a new endpoint (or group of endpoints):
 Now you can launch `watch.sh` script which will run the migrations and tests and start the application on all code changes.
 
     ./watch.sh
-    
-or, if you are running postgres in docker:
-
-    PROFILE=docker ./watch.sh
-    
-To rename the project, just replace all occurances of `boilerplate` in 
