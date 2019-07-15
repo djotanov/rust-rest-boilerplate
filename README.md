@@ -27,7 +27,7 @@ Install cargo-generate, diesel-cli and cargo-watch
     
 Clone this repo using cargo-generate
 
-    cargo generate --git https://github.com/djotanov/rust-rest-template.git --name myproject
+    cargo generate --git https://github.com/djotanov/rust-rest-boilerplate.git --name myproject
 
 Install postgres database and make sure that local user is admin and it should use "peer" or "trust" authentication methods (see `pg_hba.conf`)
 Than run the application
