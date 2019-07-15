@@ -46,6 +46,3 @@ To create a new endpoint (or group of endpoints):
 - Implement service (in `service` folder)
 - Create database migrations (in `migrations` folder)
 - Implement repository (in `repository` folder)
-
-###TODO
-- Investigate different testing frameworks
